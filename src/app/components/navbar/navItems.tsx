@@ -4,7 +4,6 @@ import tw from "twin.macro";
 import { slide as Menu } from "react-burger-menu";
 import { useMediaQuery } from "react-responsive";
 
-
 import { SCREENS } from "../responsive";
 import menuStyles from "./menuStyles";
 
@@ -32,7 +31,7 @@ const NavItem = styled.li<{ menu?: any }>`
   `};
   ${({ menu }) =>
     menu &&
- css`
+    css`
       ${tw`
       text-white
       text-xl

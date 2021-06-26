@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
-import CarLogoImg from '../../../assets/images/car-logo.png';
+import React from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+import CarLogoImg from "../../../assets/images/car-logo.png";
 
 const LogoContainer = styled.div`
-    ${tw`
+  ${tw`
         flex
         items-center
     `};
-    `;
+`;
 
 const LogoText = styled.div`
-${tw`
+  ${tw`
     text-xl
     md:text-2xl
     font-bold
@@ -21,26 +21,25 @@ ${tw`
 `;
 
 const Image = styled.div`
-    width:auto;
-    ${tw`
+  width: auto;
+  ${tw`
         h-6
         md: h-9
     `};
 
-    img{
-        width:auto;
-        height:100%;
-    }
-`
+  img {
+    width: auto;
+    height: 100%;
+  }
+`;
 
-export function Logo()
-{
-    return (
+export function Logo() {
+  return (
     <LogoContainer>
-        <Image>
-            <img src={CarLogoImg} />
-        </Image>
-        <LogoText>Brand Name</LogoText>
+      <Image>
+        <img src={CarLogoImg} />
+      </Image>
+      <LogoText>Brand Name</LogoText>
     </LogoContainer>
-    );
+  );
 }

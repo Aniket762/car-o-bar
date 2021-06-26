@@ -1,14 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import React from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
 
-import { Logo } from '../logo';
-import { NavItems } from './navItems';
-
+import { Logo } from "../logo";
+import { NavItems } from "./navItems";
 
 const NavContainer = styled.div`
-    min-height:68px;
-    ${tw`
+  min-height: 68px;
+  ${tw`
         w-full
         max-w-screen-2xl
         flex
@@ -22,14 +21,13 @@ const NavContainer = styled.div`
 
 const LogoContainer = styled.div``;
 
-export function Navbar()
-{
-    return (
+export function Navbar() {
+  return (
     <NavContainer>
-        <LogoContainer>
-            <Logo />
-        </LogoContainer>
-        <NavItems />
+      <LogoContainer>
+        <Logo />
+      </LogoContainer>
+      <NavItems />
     </NavContainer>
-    )
+  );
 }
