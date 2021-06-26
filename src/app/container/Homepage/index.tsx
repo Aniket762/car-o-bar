@@ -5,7 +5,8 @@ import { Navbar } from "../../components/navbar";
 import { BookCard } from "../../components/bookCard";
 import { TopSection } from "./topSection";
 import { BookingSteps } from "./bookingStep";
-import {Marginer} from "../../components/marginer";
+import { Marginer } from "../../components/marginer";
+import { AboutUs } from "./aboutUs";
 const PageContainer = styled.div`
   ${tw`
     flex
@@ -18,12 +19,16 @@ const PageContainer = styled.div`
 `;
 
 export function HomePage() {
-  return <PageContainer>
-    <Navbar />
-    <TopSection />
+  return (
+    <PageContainer>
+      <Navbar />
+      <TopSection />
       <Marginer direction="vertical" margin="4em" />
       <BookCard />
       <Marginer direction="vertical" margin="10em" />
       <BookingSteps />
-  </PageContainer>;
+      <Marginer direction="vertical" margin="4em" />
+      <AboutUs />
+    </PageContainer>
+  );
 }
