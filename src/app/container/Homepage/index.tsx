@@ -7,6 +7,7 @@ import { TopSection } from "./topSection";
 import { BookingSteps } from "./bookingStep";
 import { Marginer } from "../../components/marginer";
 import { AboutUs } from "./aboutUs";
+import { TopCars } from "./topCars";
 const PageContainer = styled.div`
   ${tw`
     flex
@@ -29,6 +30,8 @@ export function HomePage() {
       <BookingSteps />
       <Marginer direction="vertical" margin="4em" />
       <AboutUs />
+      <Marginer direction="vertical" margin="4em" />
+      <TopCars />
     </PageContainer>
   );
 }
