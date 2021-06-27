@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import tw from "twin.macro";
 import { ICar } from "../../../typings/car";
 import { Car } from "../../components/car";
+import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -19,6 +21,7 @@ const TopCarsContainer = styled.div`
     mb-10
   `};
 `;
+
 
 const Title = styled.h2`
   ${tw`
@@ -42,7 +45,8 @@ const CarsContainer = styled.div`
 
 export function TopCars()
 {
-    
+    const [current, setCurrent] = useState(0);
+
   const testCar: ICar = {
     name: "Audi S3 Car",
     mileage: "10k",
@@ -70,9 +74,29 @@ export function TopCars()
             <Title>Explore Top Cars</Title>
             <CarsContainer>
 
+                <Carousel
+                    value={current}
+                    OnChange={setCurrent}
+                    slides={[
+                        <Car {...testCar} />,
+                        <Car {...testCar2} />,
+                        <Car {...testCar} />,
+                        <Car {...testCar2} />
+                    ]}
+                    plugins={[
+                        {
+                            resolve: slidesToShowPlugin,
+                            options: {
+                                numberOfSlides:3,
+                            }
+                        }
+                    ]}
+                />
+            <Dots value={current} onChange={setCurrent} number={4} />
+{/* 
             <Car {...testCar} />
             <Car {...testCar} />
-            <Car {...testCar2} />
+            <Car {...testCar2} /> */}
 
             </CarsContainer>
         </TopCarsContainer>
